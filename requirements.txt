@@ -1,4 +1,5 @@
 whisper-ctranslate2 @ git+https://github.com/jordimas/whisper-ctranslate2.git@0cb43ffa961415fd4ccc4c4d50cb2a6d5f23270a
+deepl==1.15.0
 typing_extensions==4.7.1
 tzdata==2023.3
 tzlocal==5.0.1

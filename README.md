@@ -57,10 +57,18 @@ ffmpeg -i example.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 output.wav
 ## We transcribe the output.wav audio file into a srt file which will contain the subtitles. /!\ this can take a very long time.
 
 ```
-whisper-ctranslate2 --device cpu --compute_type int8 --threads 6 --language fr --task transcribe --output_format srt --model medium output.wav --word_timestamps True --max_line_width 40 --max-line-count 1
+whisper-ctranslate2 --device cpu --compute_type int8 --threads 6 --language fr --task transcribe --output_format srt --model large-v2 output.wav --word_timestamps True --max_line_width 50 --max-line-count 1
 ```
 
 You can use `whisper-ctranslate2 --help` if you want to change this command as your need.
+
+## Then we can translate the srt file : (OPTIONAL)
+
+/!\ You need a deepl API key for this.
+
+```
+python translate.py
+```
 
 # Using a unnofficial model from huggingface.co
 
