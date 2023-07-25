@@ -1,3 +1,5 @@
+# JustTranslateAndSubtile
+
 This Repository can be used to transcribe a mp4 video.
 It uses forks of whisper AI from openai, including faster-whisper and whisper-ctranslate2
 
@@ -8,9 +10,9 @@ It uses forks of whisper AI from openai, including faster-whisper and whisper-ct
 
 - Install and create a python3.10 virtualenv :
 
-```pip install virtualenv```
-```virtualenv -p python3.10 myenv```
-```source myenv/bin/activate```
+```pip install virtualenv```  
+```virtualenv -p python3.10 myenv```  
+```source myenv/bin/activate```  
 
 - Install all required python3.10 packages :
 
