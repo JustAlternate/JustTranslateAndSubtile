@@ -1,0 +1,11 @@
+source myenv/bin/activate
+
+ffmpeg -i input.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 output.wav
+
+whisper-ctranslate2 --device cpu --compute_type int8 --threads 6 --language fr --task translate --output_format txt --model large-v1 output.wav --word_timestamps --max_line_width 20
+
+python TTS/test.py
+
+ffmpeg -i input.mp4 -i final.wav -c:v copy -map 0:v:0 -map 1:a:0 dubbed.mp4
+
+ct2-transformers-converter --model pierreguillou/whisper-medium-french --output_dir whisper-medium-pierreguillou-french --copy_files tokenizer_config.json --quantization int8 --force
