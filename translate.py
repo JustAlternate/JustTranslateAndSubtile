@@ -3,7 +3,7 @@ import sys
 
 
 def translate(text, lang):
-    auth_key = "0cac304a-e207-914b-1d55-555c005f7bb6:fx"
+    auth_key = "YOUR-API-KEY"
     translator = deepl.Translator(auth_key)
     result = translator.translate_text(text, target_lang=lang)
     return result.text
