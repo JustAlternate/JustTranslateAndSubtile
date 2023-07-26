@@ -67,10 +67,19 @@ You can use `whisper-ctranslate2 --help` if you want to change this command as y
 ```
 python translate.py output.srt translated_srt_file.srt EN-US
 ```
-
 You can find a list of all available languages on the deepl API documentation.
 
-# Using a unnofficial model from huggingface.co
+## Take a look at your subtitles
+
+You can either directly look at the `translated_srt_file.srt` created to see your translated subtitles.
+
+Or you can use vlc to watch your video with the desired subtitles :
+
+```
+vlc --sub-file translated_srt_file.srt example.mp4
+```
+
+# Using a unofficial model from huggingface.co
 
 If you want to use a model from huggingface you will first have to convert it to be used by whisper-ctranslate2 :
 ```
