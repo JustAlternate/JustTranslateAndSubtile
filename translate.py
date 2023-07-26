@@ -1,4 +1,5 @@
 import deepl
+import sys
 
 
 def translate(text, lang):
@@ -15,7 +16,6 @@ def translate_srt_file(input_file, output_file, target_lang):
 
     # Translate the whole text
     translated_text = translate(original_text, target_lang)
-    print(translated_text)
 
     # Save the translated text to the output file
     with open(output_file, 'w', encoding='utf-8') as file:
@@ -23,7 +23,11 @@ def translate_srt_file(input_file, output_file, target_lang):
 
 
 if __name__ == "__main__":
-    input_file_path = "output.srt"
-    output_file_path = "translated_srt_file.srt"
-    target_language = "EN-US"  # Change this to the target language code
-    translate_srt_file(input_file_path, output_file_path, target_language)
+    if (len(sys.argv)) < 4:
+        print("usage: <input_srt_file> <output_srt_file_path> <language>")
+    else:
+        print(sys.argv)
+        input_file_path = sys.argv[1]
+        output_file_path = sys.argv[2]
+        target_language = sys.argv[3]
+        translate_srt_file(input_file_path, output_file_path, target_language)

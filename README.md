@@ -33,8 +33,6 @@ Windows : `consider switching to linux bro.`
 
 # Usage
 
-Now everything should be good to go.
-
 You will have to first choose a model for whisper to use.
 
 ## Official whisper models
@@ -43,8 +41,8 @@ This is a list of models you can use :
 
 - small
 - medium    <--- I recommend
-- large-v2  <--- Slower but more consistent
 - large-v1
+- large-v2  <--- Slower but more consistent
 
 Lets try and transcribe the example.mp4 file I gave you.
 
@@ -67,8 +65,10 @@ You can use `whisper-ctranslate2 --help` if you want to change this command as y
 /!\ You need a deepl API key for this.
 
 ```
-python translate.py
+python translate.py output.srt translated_srt_file.srt EN-US
 ```
+
+You can find a list of all available languages on the deepl API documentation.
 
 # Using a unnofficial model from huggingface.co
 
@@ -77,6 +77,6 @@ If you want to use a model from huggingface you will first have to convert it to
 ct2-transformers-converter --model <author/model> --output_dir <model> --copy_files tokenizer.json --quantization int8 --force
 ```
 
-Replace <author/model> by for example : pierreguillou/whisper-medium-french and make sure to copy the right tokenizer file.
+Replace <author/model> by for example : `pierreguillou/whisper-medium-french` and make sure to copy the right tokenizer file.
 For the quantization consider replacing int8 with float16 if you want to use your GPU to transcribe rather than your CPU
 
